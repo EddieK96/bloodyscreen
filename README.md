@@ -1,4 +1,4 @@
-# bloodyscreen
+# bloodyscreen v0.9
 
 Drag the "bloodyscreen" folder into your servers "resource" folder and add "start bloodyscreen" to your server.cfg.
 
