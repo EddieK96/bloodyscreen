@@ -1,0 +1,2 @@
+staticindicator = {}
+staticindicator.initialized = true
