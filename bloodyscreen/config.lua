@@ -10,7 +10,8 @@ config = {}
 	config.activateaccutehealthindicator = true
 	
 	--Static screeneffect as a permanent health indicator:
-	config.activatestatichealthindicator = false
+	--config.activatestatichealthindicator = false
+	--NOT IMPLEMENTED YET
 
 	--Maximum effect strength:
 	config.maxeffectstrength = 10.0
