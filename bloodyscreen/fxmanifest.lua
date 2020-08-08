@@ -2,10 +2,11 @@ fx_version 'adamant'
 
 game 'gta5'
 
-description 'BlackBooks Player Movement Mechanics'
+description 'bloodyscreen'
 
 version '1.0'
 
 client_scripts {
-	'client/*.lua'
+	'client/*.lua',
+	'config.lua'
 }
