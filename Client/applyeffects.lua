@@ -15,14 +15,14 @@ Citizen.CreateThread(function()
 	end
 
 	function loop ()
-			SetTimecycleModifier("damage") 
+			SetTimecycleModifier(config.tcmEffect)
 		while true do
 			Citizen.Wait(0)
 			-----------------------------------------------------------------------------------------------
 			--Apply screen effect:
 			-----------------------------------------------------------------------------------------------
 			if (main.currenthealth >= main.deadhealth and main.currenthealth < main.maxhealth) and not IsPlayerDead(PlayerId()) then 
-				if not (GetTimecycleModifierIndex() == 58) or IsPlayerDead(main.player) then
+				if not (GetTimecycleModifierIndex() == config.tcmIndex) or IsPlayerDead(main.player) then
 					AnimpostfxStop("RaceTurbo")
 					return 0
 				end
@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
 				applyeffects.strength = applyeffects.strength + 0.02
 			else
 				main.strength = 0.0
-				if not (GetTimecycleModifierIndex() == 58) or IsPlayerDead(main.player) then
+				if not (GetTimecycleModifierIndex() == config.tcmIndex) or IsPlayerDead(main.player) then
 					AnimpostfxStop("RaceTurbo")
 					return 0
 				end
@@ -40,10 +40,17 @@ Citizen.CreateThread(function()
 		end
 	end
 	
+	local notified = false
 	while true do
 		Citizen.Wait(0)
-		if (GetTimecycleModifierIndex() == -1 or GetTimecycleModifierIndex() == 58) then
+		if (GetTimecycleModifierIndex() == -1 or GetTimecycleModifierIndex() == config.tcmIndex) then
 			loop()
+		else
+			if not notified then
+				notify("TCM Index: " .. GetTimecycleModifierIndex())
+				Citizen.Trace("\nTCM Index: " .. GetTimecycleModifierIndex())
+				notified = true
+			end
 		end
 	end
 end)

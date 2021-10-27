@@ -11,6 +11,15 @@ config = {}
 	
 	--Static screeneffect as a permanent health indicator:
 	config.activatestatichealthindicator = true
+	
+	--Timecycle modifier to use for screen effect:
+	--	https://wiki.rage.mp/index.php?title=Timecycle_Modifiers
+	config.tcmEffect = "glasses_red"
+	
+	--The timecycle modifier index to check for:
+	--	First set the config.tcmEffect then start the resource
+	--	and read the index from the client console and insert it here.
+	config.tcmIndex = 445
 
 	--Maximum effect strength:
 	config.maxeffectstrength = 0.9
@@ -24,7 +33,7 @@ config = {}
 	config.percentagestaticeffecthealthfraction = 1.0
 	
 	--Effect strength multiplier for static health indicator:
-	config.staticindicatorstrengthmultiplier = 0.3
+	config.staticindicatorstrengthmultiplier = 0.15
 	
 	
 -------------------------------------------------------------------------------------------------------------
@@ -38,10 +47,10 @@ config = {}
 	config.impacteffectboosteffect = false
 	
 	--Effect strength multiplier for damage impacts:
-	config.impacteffectstrengthmultiplier = 14.0
+	config.impacteffectstrengthmultiplier = 20.0
 
 	--Value between 0.0 and 1.0 for how fast the screen effect fades away after a damage impact:
-	config.accutedamagerecoveryrate = 0.02
+	config.accutedamagerecoveryrate = 0.06
 
 
 -------------------------------------------------------------------------------------------------------------
@@ -62,7 +71,7 @@ config = {}
 	config.maxpulseinterval = 133
 
 	--Effect strength multiplier for pulsating effect:
-	config.pulsatingmultiplier = 0.3
+	config.pulsatingmultiplier = 0.6
 	
 	--Heartbeat audio when screen is pulsating:
 	config.pulsatingheartbeataudio = true
@@ -71,7 +80,7 @@ config = {}
 	config.pulsatingheartbeatvolume = 0.8
 	
 	--Pulse recovery rate multiplier:
-	config.pulserecoveryratemultiplier = 1.5
+	config.pulserecoveryratemultiplier = 0.06
 	
 	
 -- *: Players usally die at a health below 100, not 0. That value is subtracted in the code to get a better relative 
