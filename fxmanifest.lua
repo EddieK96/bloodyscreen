@@ -4,7 +4,7 @@ game 'gta5'
 
 description 'bloodyscreen'
 
-version '1.0'
+version '1.3'
 
 ui_page 'html/main.html'
 

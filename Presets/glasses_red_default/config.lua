@@ -13,7 +13,7 @@ config = {}
 	config.activatestatichealthindicator = true
 	
 	--Timecycle modifier to use for screen effect:
-	--	https://wiki.rage.mp/index.php?title=Timecycle_Modifiers
+	--	https://pastebin.com/kVPwMemE
 	config.tcmEffect = "glasses_red"
 	
 	--The timecycle modifier index to check for:
