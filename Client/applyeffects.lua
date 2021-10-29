@@ -15,28 +15,26 @@ Citizen.CreateThread(function()
 	end
 
 	function loop ()
-			SetTimecycleModifier(config.tcmEffect)
-		while true do
-			Citizen.Wait(0)
-			-----------------------------------------------------------------------------------------------
-			--Apply screen effect:
-			-----------------------------------------------------------------------------------------------
-			if (main.currenthealth >= main.deadhealth and main.currenthealth < main.maxhealth) and not IsPlayerDead(PlayerId()) then 
-				if not (GetTimecycleModifierIndex() == config.tcmIndex) or IsPlayerDead(main.player) then
-					AnimpostfxStop("RaceTurbo")
-					return 0
-				end
-				SetTimecycleModifierStrength(applyeffects.strength + staticindicator.strength)
-				applyeffects.strength = applyeffects.strength + 0.02
-			else
-				main.strength = 0.0
-				if not (GetTimecycleModifierIndex() == config.tcmIndex) or IsPlayerDead(main.player) then
-					AnimpostfxStop("RaceTurbo")
-					return 0
-				end
-				SetTimecycleModifierStrength(0.0)
-				applyeffects.strength = applyeffects.strength + 0.02
+		SetTimecycleModifier(config.tcmEffect)
+
+		-----------------------------------------------------------------------------------------------
+		--Apply screen effect:
+		-----------------------------------------------------------------------------------------------
+		if (main.currenthealth >= main.deadhealth and main.currenthealth < main.maxhealth) and not IsPlayerDead(PlayerId()) then 
+			if not (GetTimecycleModifierIndex() == config.tcmIndex) or IsPlayerDead(main.player) then
+				AnimpostfxStop("RaceTurbo")
+				return 0
 			end
+			SetTimecycleModifierStrength(applyeffects.strength + staticindicator.strength)
+			applyeffects.strength = applyeffects.strength + 0.02
+		else
+			main.strength = 0.0
+			if not (GetTimecycleModifierIndex() == config.tcmIndex) or IsPlayerDead(main.player) then
+				AnimpostfxStop("RaceTurbo")
+				return 0
+			end
+			SetTimecycleModifierStrength(0.0)
+			applyeffects.strength = applyeffects.strength + 0.02
 		end
 	end
 	
